@@ -7,6 +7,7 @@ class SecuritySettings(BaseSettings):
 
     jwt_public_key: str
     jwt_private_key: str
+    database_url: str
     jwt_algorithm: str = "RS256"
     jwt_issuer: str = "verilatency"
     jwt_audience: str = "verilatency-api"

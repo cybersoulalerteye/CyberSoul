@@ -91,3 +91,20 @@ async def get_tenant_context(
     current_user: Annotated[CurrentUser, Depends(get_current_user)],
 ) -> UUID:
     return current_user.tenant_id
+
+from collections.abc import AsyncIterator
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from .db import get_sessionmaker
+from .tenant_context import set_tenant_context
+
+
+async def get_db_session(
+    current_user: Annotated[CurrentUser, Depends(get_current_user)],
+) -> AsyncIterator[AsyncSession]:
+    sessionmaker = get_sessionmaker()
+    async with sessionmaker() as session:
+        async with session.begin():
+            # RLS is active for the duration of this transaction.
+            await set_tenant_context(session, current_user.tenant_id)
+            yield session

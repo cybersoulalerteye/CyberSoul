@@ -13,6 +13,7 @@ import "./styles/sources.css";
 import "./styles/rules.css";
 import "./styles/reports.css";
 import "./styles/settings.css";
+import "./styles/security.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

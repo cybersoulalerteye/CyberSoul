@@ -6,6 +6,7 @@ import {
   FileSearch,
   LayoutDashboard,
   Settings,
+  ShieldCheck,
   Siren,
   SlidersHorizontal,
 } from "lucide-react";
@@ -22,6 +23,7 @@ const configuration = [
   { label: "Rules", to: "/rules", icon: SlidersHorizontal },
   { label: "Reports", to: "/reports", icon: BarChart3 },
   { label: "Settings", to: "/settings", icon: Settings },
+  { label: "Security", to: "/security", icon: ShieldCheck },
 ];
 
 function TopBar() {

@@ -2,6 +2,7 @@ import { AlertTriangle, Info, ShieldCheck } from "lucide-react";
 import type { ReactNode } from "react";
 import { Button } from "./Button";
 import type { SourceStatus } from "../../data/sourcesMock";
+import type { SecurityStatus } from "../../data/securityMock";
 
 export function EvidenceBoundaryNotice() {
   return <div className="trust-notice trust-notice--info"><Info size={17} aria-hidden="true" /><p>Recorded evidence only. Live camera integration not yet available.</p></div>;
@@ -36,4 +37,11 @@ export function InlineError({ onRetry }: { onRetry: () => void }) {
 
 export function ForbiddenState({ message = "You don’t have access to this information." }: { message?: string }) {
   return <div className="trust-forbidden" role="status"><ShieldCheck size={18} aria-hidden="true" /><p>{message}</p></div>;
+}
+
+const securityStatusText: Record<SecurityStatus, string> = { configured: "Configured", "in-progress": "In progress", required: "Required", "not-applicable": "N/A", unknown: "Unknown" };
+export function SecurityStatusBadge({ status, evidence, checked }: { status: SecurityStatus; evidence?: string; checked?: string | null }) {
+  const validConfigured = status === "configured" && Boolean(evidence && checked);
+  const shownStatus: SecurityStatus = status === "configured" && !validConfigured ? "unknown" : status;
+  return <span className={`security-status security-status--${shownStatus}`} title={validConfigured ? `${evidence} Checked ${checked}.` : undefined}><i aria-hidden="true" />{securityStatusText[shownStatus]}</span>;
 }

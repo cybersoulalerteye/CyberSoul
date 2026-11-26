@@ -12,6 +12,7 @@ import "./styles/evidence.css";
 import "./styles/sources.css";
 import "./styles/rules.css";
 import "./styles/reports.css";
+import "./styles/settings.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

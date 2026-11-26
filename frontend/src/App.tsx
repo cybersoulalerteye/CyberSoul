@@ -7,6 +7,7 @@ import { IncidentDetailPage } from "./pages/IncidentDetailPage";
 import { IncidentsPage } from "./pages/IncidentsPage";
 import { EvidencePage } from "./pages/EvidencePage";
 import { SourcesPage } from "./pages/SourcesPage";
+import { RulesPage } from "./pages/RulesPage";
 import {
   Avatar,
   Badge,
@@ -190,7 +191,7 @@ export default function App() {
         <Route path="evidence/upload" element={<EvidencePage />} />
         <Route path="evidence" element={<EvidencePage />} />
         <Route path="sources" element={<SourcesPage />} />
-        <Route path="rules" element={<RoutedPage />} />
+        <Route path="rules" element={<RulesPage />} />
         <Route path="reports" element={<RoutedPage />} />
         <Route path="settings" element={<RoutedPage />} />
         <Route path="dev/components" element={<ComponentsPage />} />

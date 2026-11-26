@@ -10,6 +10,7 @@ import "./styles/incidents.css";
 import "./styles/incident-detail.css";
 import "./styles/evidence.css";
 import "./styles/sources.css";
+import "./styles/rules.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

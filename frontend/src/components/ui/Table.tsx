@@ -1,9 +1,12 @@
 import type { HTMLAttributes, ReactNode, ThHTMLAttributes, TdHTMLAttributes } from "react";
 
-export function Table({ children, className = "", ...props }: HTMLAttributes<HTMLTableElement>) {
+type TableProps = HTMLAttributes<HTMLTableElement> & { caption?: string };
+
+export function Table({ children, className = "", caption = "Data table", ...props }: TableProps) {
   return (
     <div className="table-wrap">
       <table className={`table ${className}`.trim()} {...props}>
+        <caption className="sr-only">{caption}</caption>
         {children}
       </table>
     </div>

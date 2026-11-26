@@ -12,3 +12,4 @@ export { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from ".
 export { Tabs } from "./Tabs";
 export type { TabItem } from "./Tabs";
 export { Toast } from "./Toast";
+export { EvidenceBoundaryNotice, HumanInLoopBanner, PriorityExplanation, DataProvenanceBadge, MetricDefinition, SourceStatusBadge, InlineError, ForbiddenState } from "./Trust";

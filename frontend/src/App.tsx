@@ -11,6 +11,7 @@ import { RulesPage } from "./pages/RulesPage";
 import { ReportsPage } from "./pages/ReportsPage";
 import { SettingsPage } from "./pages/SettingsPage";
 import { SecurityPage } from "./pages/SecurityPage";
+import { SecurityAuthPage } from "./pages/SecurityAuthPage";
 import {
   Avatar,
   Badge,
@@ -198,6 +199,7 @@ export default function App() {
         <Route path="reports" element={<ReportsPage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="security" element={<SecurityPage />} />
+        <Route path="security/auth" element={<SecurityAuthPage />} />
         <Route path="dev/components" element={<ComponentsPage />} />
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Route>

@@ -61,6 +61,19 @@
 .auth-audit-list { display: grid; gap: 9px; padding: 0; list-style: none; }
 .auth-audit-list li { display: grid; grid-template-columns: 155px 1fr; gap: 10px; font-size: var(--text-sm); }
 .auth-audit-list time { color: var(--text-muted); }
+.encryption-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+.encryption-card { display: grid; align-content: start; gap: 9px; min-height: 155px; padding: 15px; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); }
+.encryption-card__heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+.encryption-card h2 { display: flex; align-items: center; gap: 7px; margin: 0; font-size: var(--text-base); font-weight: 600; }
+.encryption-card p { margin: 0; color: var(--text-muted); font-size: var(--text-sm); line-height: 19px; }
+.encryption-card small,.hygiene-evidence { color: var(--text-muted); font-size: var(--text-xs); }
+.encryption-card > a { justify-self: start; font-size: var(--text-xs); }
+.encryption-definition { display: inline-flex; color: var(--text-muted); cursor: help; }
+.hygiene-evidence { line-height: 17px; }
+.encryption-claim-note { padding: 13px 15px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); }
+.encryption-claim-note strong { font-size: var(--text-sm); }
+.encryption-claim-note p { margin: 3px 0 0; color: var(--text-muted); font-size: var(--text-sm); }
 @media (max-width: 1024px) { .security-score-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .security-heading { align-items: flex-start; } .security-heading > button { padding-inline: 8px; } .security-score-row { grid-template-columns: 1fr 1fr; gap: 8px; } .security-tabs { margin-inline: -6px; } .security-domain-panel { border: 0; background: transparent; overflow: visible; } .security-domain-panel .table-wrap { overflow: visible; } .security-domain-panel table { min-width: 0; } .security-domain-panel thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; } .security-domain-panel tbody { display: grid; gap: 9px; } .security-domain-panel tr { display: grid; grid-template-columns: 1fr 1fr; gap: 7px 12px; padding: 12px; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); } .security-domain-panel td { display: grid; gap: 3px; border: 0; padding: 0; font-size: var(--text-xs); overflow-wrap: anywhere; } .security-domain-panel td:first-child { grid-column: 1 / -1; font-size: var(--text-sm); } .security-domain-panel td::before { content: attr(data-label); color: var(--text-muted); font-size: 10px; } }
 @media (max-width: 640px) { .auth-edit-form { align-items: stretch; flex-direction: column; } .auth-edit-form > .field { width: 100%; } .auth-mfa-control { align-items: flex-start; flex-wrap: wrap; } .auth-audit-list li { grid-template-columns: 1fr; gap: 2px; } }
+@media (max-width: 640px) { .encryption-grid { grid-template-columns: 1fr; } .encryption-card { min-height: auto; } }
